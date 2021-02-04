@@ -10,6 +10,7 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$('a.friendName').click(clickIt);
 }
 
 function anagrammedName(name) {
@@ -39,8 +40,18 @@ function anagrammedName(name) {
 	else if (name == "Grace Hopper") {
 		return "Gear Chopper";
 	}
+	else if (name == "Emma Lee") {
+		return "Am Melee";
+	}
+
 	else {
 		console.log(name + " not known for anagramming.");
 		return name;
 	}
+}
+
+
+function clickIt(e) {
+	e.preventDefault();
+	$(this).text(anagrammedName($(this).text()));
 }
